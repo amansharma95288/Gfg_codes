@@ -9,16 +9,17 @@ using namespace std;
 // User function template for C++
 class Solution {
   public:
-  int missingNumber(int n, vector<int>& arr) {
-        int xor1 = 0, xor2 = 0;
-        for (int i = 0; i < arr.size(); i++) {
-           xor1 ^= arr[i];
-        }
-        for(int i=1;i<=n;i++){
-           xor2 ^= i;
-        }
-        return xor1 ^ xor2;
-     }
+    int missingNumber(int n, vector<int>& arr) {
+      int xor1=0;
+      int xor2=0;
+      for(int i=0;i<arr.size();i++){
+          xor1^=arr[i];
+      }
+      for(int i=1;i<=n;i++){
+          xor2^=i;
+      }
+      return xor1^xor2;
+    }
 };
 
 //{ Driver Code Starts.
